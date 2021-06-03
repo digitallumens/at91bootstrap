@@ -121,6 +121,8 @@ config PROJECT
 	default "nandflash"	if NANDFLASH
 	default "sdcard"	if SDCARD
 
+source "Config.in.optee"
+
 choice
 	prompt "Next Software Type"
 	depends on LOAD_SW || JUMP_TO_SW
