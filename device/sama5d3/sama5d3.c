@@ -276,6 +276,10 @@ void hw_init(void)
 	HDMI_Qt1070_workaround();
 #endif
 
+#ifdef CONFIG_BOARD_QUIRK_GATEWAY3
+	disable_extra_leds();
+#endif
+
 #if defined(CONFIG_NANDFLASH_RECOVERY) || defined(CONFIG_DATAFLASH_RECOVERY)
 	/* Init the recovery buttons pins */
 	recovery_buttons_hw_init();

@@ -404,6 +404,10 @@ config BOARD_QUIRK_SAM9X60_CURIOSITY
 
 endchoice
 
+config BOARD_QUIRK_GATEWAY3
+	bool "Quirks for Gateway3"
+	default n
+
 config LED_ON_BOARD
 	bool "There are LEDs on the board"
 	default n

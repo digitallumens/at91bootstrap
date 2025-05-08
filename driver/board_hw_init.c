@@ -25,6 +25,18 @@ void HDMI_Qt1070_workaround(void)
 }
 #endif
 
+#ifdef CONFIG_BOARD_QUIRK_GATEWAY3
+void disable_extra_leds(void)
+{
+	pio_set_gpio_output(AT91C_PIN_PA(0), 0);
+	pio_set_gpio_output(AT91C_PIN_PA(1), 0);
+	pio_set_gpio_output(AT91C_PIN_PA(2), 0);
+	pio_set_gpio_output(AT91C_PIN_PA(3), 0);
+	pio_set_gpio_output(AT91C_PIN_PA(4), 0);
+	pio_set_gpio_output(AT91C_PIN_PA(5), 0);
+}
+#endif
+
 #if defined(CONFIG_HDMI)
 #if defined(CONFIG_BOARD_QUIRK_SAMA5D4)
 void SiI9022_hw_reset(void)
